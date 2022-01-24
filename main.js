@@ -1,71 +1,71 @@
-// Definisco variabili per i dati del form
-let name = document.getElementById('name');
+const name = document.getElementById('name');
 
-let km = document.getElementById('km');
+const km = document.getElementById('km');
 
-let age = document.getElementById('age');
+const age = document.getElementById('age');
 
-// Definisco variabili biglietto
-let nameTicket = document.getElementById('nameTicket');
-let typeTicket = document.getElementById('typeTicket');
-let carriageTicket = document.getElementById('carriageTicket');
-let cpTicket = document.getElementById('cpTicket');
-let priceTicket = document.getElementById('priceTicket');
-
-// Click sui bottoni
+//Buttons
 const generate = document.getElementById('generate');
 
 const revert = document.getElementById('revert');
 
+// Elementi per inject
+const nameTicket = document.getElementById('nameTicket');
+const typeTicket = document.getElementById('typeTicket');
+const carriageTicket = document.getElementById('carriageTicket');
+const cpTicket = document.getElementById('cpTicket');
+const priceTicket = document.getElementById('priceTicket');
 
+// Prezzi
+const price = km.value * 0.21;
+console.log(price);
+
+const overPrice = price - ((price * 40) / 100);
+console.log(overPrice);
+
+const underPrice = price - ((price * 20) / 100);
+console.log(underPrice);
+
+// cp e carriage
+let cp =  Math.floor(Math.random() * 9999 + 90000);
+
+let carriage = Math.floor(Math.random() * 9 + 1 );
+
+// Click buttons
 generate.addEventListener('click',
 
-    function(){
-
-        // Variabile visibilita' biglietto
-        const displayTicket = document.getElementById('displayTicket');
-        
-        // Definisco variabili prezzi
-        const price = km.value * 0.21;
-        
-        const overPrice = price - (price * 0.4);
-
-        const underPrice = price - (price * 0.2);
-
-        // Definisco variabile Cp e carrozza
-
-        let cp = Math.floor(Math.random() * 9999 + 90000);
-
-        cpTicket.innerHTML = cp;
-
-        let carriage = Math.floor(Math.random() * 9 + 1 );
-
-        carriageTicket.innerHTML = carriage;
+    function() {
 
         nameTicket.innerHTML = name.value;
+        carriageTicket.innerHTML = carriage;
+        cpTicket.innerHTML = cp;
 
-        if (age.value == ""){
-            alert("Inserisci la tua età'!");
+        if (age.value == "maggiorenne"){
+            typeTicket.innerHTML = "Biglietto Standard";
+            priceTicket.innerHTML = price.toFixed(2) + " &euro; ";
         } else if (age.value == "over65"){
             typeTicket.innerHTML = "Biglietto Over 65";
-            priceTicket.innerHTML = overPrice.toFixed(2) + "&euro;";
-            console.log(overPrice);
-            displayTicket.className =  "d-block " + "row" + " bg-wh " + " p-2";
-        } else if (age.value == "minorenne"){
-            typeTicket.innerHTML = "Biglietto Minorenne";
-            priceTicket.innerHTML = underPrice.toFixed(2) + "&euro;";
-            displayTicket.className =  "d-block " + "row" + " bg-wh " + " p-2";
+            priceTicket.innerHTML = overPrice.toFixed(2) + " &euro; ";
         } else {
-            typeTicket.innerHTML = "Biglietto Standard";
-            priceTicket.innerHTML = price.toFixed(2) + "&euro;";
-            displayTicket.className =  "d-block " + "row" + " bg-wh " + " p-2";
+            typeTicket.innerHTML = "Biglietto Minorenni";
+            priceTicket.innerHTML = underPrice.toFixed(2) + " &euro; ";
         }
 
-                                              
-        
-        
+        displayTicket.className =  "d-block " + "row" + " bg-wh " + " p-2";
     }
+
+);
+
+revert.addEventListener('click',
+
+    function(){
         
-    
+        displayTicket.className =  "d-none" ;
+
+        age.value="";
+        name.value="";
+        km.value="";
+
+    }
 
 );
