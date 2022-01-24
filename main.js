@@ -40,18 +40,23 @@ generate.addEventListener('click',
         carriageTicket.innerHTML = carriage;
         cpTicket.innerHTML = cp;
 
-        if (age.value == "maggiorenne"){
-            typeTicket.innerHTML = "Biglietto Standard";
-            priceTicket.innerHTML = price.toFixed(2) + " &euro; ";
-        } else if (age.value == "over65"){
-            typeTicket.innerHTML = "Biglietto Over 65";
-            priceTicket.innerHTML = overPrice.toFixed(2) + " &euro; ";
+        if  (age.value == ""){
+            alert("Inserisci la tua eta'!");
         } else {
-            typeTicket.innerHTML = "Biglietto Minorenni";
-            priceTicket.innerHTML = underPrice.toFixed(2) + " &euro; ";
+            
+            if (age.value == "maggiorenne"){
+                typeTicket.innerHTML = "Biglietto Standard";
+                priceTicket.innerHTML = price.toFixed(2) + " &euro; ";
+            } else if (age.value == "over65"){
+                typeTicket.innerHTML = "Biglietto Over 65";
+                priceTicket.innerHTML = overPrice.toFixed(2) + " &euro; ";
+            }  else {
+                typeTicket.innerHTML = "Biglietto Minorenni";
+                priceTicket.innerHTML = underPrice.toFixed(2) + " &euro; ";
+            }
+            displayTicket.className =  "d-block " + "row" + " bg-wh " + " p-2";
         }
 
-        displayTicket.className =  "d-block " + "row" + " bg-wh " + " p-2";
     }
 
 );
