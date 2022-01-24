@@ -49,6 +49,7 @@ generate.addEventListener('click',
         } else if (age.value == "over65"){
             typeTicket.innerHTML = "Biglietto Over 65";
             priceTicket.innerHTML = overPrice.toFixed(2) + "&euro;";
+            console.log(overPrice);
             displayTicket.className =  "d-block " + "row" + " bg-wh " + " p-2";
         } else if (age.value == "minorenne"){
             typeTicket.innerHTML = "Biglietto Minorenne";
@@ -60,13 +61,11 @@ generate.addEventListener('click',
             displayTicket.className =  "d-block " + "row" + " bg-wh " + " p-2";
         }
 
-        name.value = "";
-        km.value = "";
-        age.value = "";                                        
+                                              
         
         
     }
         
-
+    
 
 );
