@@ -15,16 +15,16 @@
         <h1 class="text-uc text-center cl-wh mb-2">Calcola il prezzo del tuo biglieto</h1>
 
         <!-- form -->
-        <div class="row bg-wh p-2 text-center d-flex">
+        <div class="row bg-wh p-2 text-center d-flex border-rad-1">
 
             <div class="col-3">
                 <span class="cl-rd d-block mb-2">Nome Cognome</span>
-                <input type="text">
+                <input type="text" id="name">
             </div>
 
             <div class="col-3">
                 <span class="cl-rd d-block mb-2">Km da percorrere</span>
-                <input type="number" min="1">
+                <input type="number" min="1" id="km">
             </div>
             <div class="col-3">
                 <span class="cl-rd d-block mb-2">Fascia d'età</span>
@@ -39,40 +39,40 @@
         </div>
 
         <!-- btn calcolo e annulla -->
-        <div class="row bg-wh d-flex-center p-2 mb-2">
+        <div class="row bg-wh d-flex-center p-2 mb-2 border-rad-2">
             <button class="cl-rd" id="generate">Genera</button>
             <button class="cl-rd" id="revert">Annulla</button>
         </div>
 
         <!-- biglietto -->
-        <h1 class="text-uc text-center cl-wh mb-2">Il tuo biglietto</h1>
+        <h1 class="text-uc text-center cl-wh mb-2 ">Il tuo biglietto</h1>
 
         <!-- display none -block a seconda di inserimento dati o meno -->
-        <div class="row bg-wh p-2">
+        <div class="row bg-wh p-2 d-none" id="displayTicket">
             <span class="d-block text-uc fw-bold">Dettaglio passeggeri</span>                        
             <div class="row-box d-flex bg-wh">
                 <div class="col-3 bg-gr p-1 ">
                     <span class="d-block text-uc fw-bold">Nome Passeggero</span>
-                    <span class="d-block fw-bold" id="name">Inserisci qui il nome JS</span>
+                    <span class="d-block fw-bold" id="nameTicket">Inserisci qui il nome JS</span>
                 </div>
                 <div class="col-3 d-flex">
                     <div class="col-50 d-flex-col j-space-around p-1 fs-0-8">
                         <span class="fw-bold">Offerta</span>
-                        <span>Inserisci tipo biglietto JS</span>
+                        <span id="typeTicket">Inserisci tipo biglietto JS</span>
                     </div>
                     <div class="col-50 d-flex-col j-space-around p-1 fs-0-8">
                         <span class="fw-bold">Carrozza</span>
-                        <span>Inserisci numero carrozza (tra 1 e 9) JS</span>
+                        <span id="carriageTicket">Inserisci numero carrozza (tra 1 e 9) JS</span>
                     </div>
                 </div>
                 <div class="col-3 d-flex">
                     <div class="col-50 d-flex-col j-space-around p-1 fs-0-8">
                         <span class="fw-bold">Codice CP</span>
-                        <span>Inserisci numero random (tra 90000 e 999999 CP JS</span>
+                        <span id="cpTicket">Inserisci numero random (tra 90000 e 999999 CP JS</span>
                     </div>
                     <div class="col-50 d-flex-col j-space-around p-1 fs-0-8">
                         <span class="fw-bold">Costo biglietto</span>
-                        <span>Inserisci costo JS</span>
+                        <span id="priceTicket">Inserisci costo JS</span>
                     </div>
                 </div>
             </div>
@@ -83,6 +83,6 @@
     
 
     <!-- JS Script -->
-    <script type="taxt/javascript" src="main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
